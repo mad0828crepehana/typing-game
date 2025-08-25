@@ -58,5 +58,8 @@ yaml
 
 ---
 
+## 公開ページ
+https://mad0828crepehana.github.io/typing-game/
+
 👉 ブラウザで開けばそのまま遊べます。  
 タイピング練習ついでに、からぴちメンバーの名言を楽しもう！  
