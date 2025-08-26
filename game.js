@@ -2,7 +2,7 @@
 (() => { 'use strict';
 
 // ===== 設定 =====
-const LIMIT = 30; // 制限秒（HTMLの表示と合わせた）
+const LIMIT = 60; // 制限秒（HTMLの表示と合わせた）
 const RAINBOW = ["#e85c9b","#f08c3c","#e0b400","#2dbf7a","#2aa6ff","#7667e5","#d65de8"];
 
 // ===== DOMヘルパ =====
