@@ -207,3 +207,55 @@ h1{
 .shake {
   animation: shake 0.3s;
 }
+
+/* ===== 上：アクティブ画面の高さに応じる / 下：説明は残りをスクロール ===== */
+:root{
+  /* 画面の最低/最大高さ（好みで調整）*/
+  --screen-min: 520px;
+  --screen-h: 100vh; /* JSで実測値に更新される */
+}
+
+html, body{
+  height: 100%;
+  margin: 0;
+}
+
+body{
+  /* ★2段レイアウト：上=現在の画面の高さ / 下=残り */
+  display: grid !important;
+  grid-template-rows: var(--screen-h) minmax(0, 1fr) !important;
+  overflow: hidden; /* 全体スクロールは止める */
+  place-items: normal !important;   /* 既存の中央寄せをリセット */
+  align-items: stretch !important;
+  justify-items: stretch !important;
+}
+
+/* 上段：start/game/end は1行目に載せる。ここでだけ中央寄せ */
+.screen{
+  grid-row: 1;
+  display: none;
+  width: 100%;
+  height: 100%;      /* ← var(--screen-h) にフィット */
+}
+.screen.active{
+  display: grid;
+  place-items: center;
+}
+
+/* 下段：説明だけスクロール */
+#about{
+  grid-row: 2;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0;              /* 余白でズレないように */
+  padding: 8px 0;         /* 好みで */
+  background: #ffffffd9;  /* 好みで（不要なら消す） */
+}
+
+/* 説明内カードの上余白を少し詰める（好みで） */
+#about .sheet{
+  margin: 12px auto 24px;
+}
+
+/* （任意）game画面の余分なスタートボタンを隠す保険 */
+#game .js-start{ display:none !important; }
