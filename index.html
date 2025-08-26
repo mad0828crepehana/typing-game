@@ -1,17 +1,17 @@
 <!DOCTYPE html>
+<html lang="ja">
 <head>
+  <!-- Google Search Console 所有権確認 -->
   <meta name="google-site-verification" content="4pgNAiCQcm2haEoHq3bM9qLS2dVtsvchol2R87dYPc4" />
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>カラフルピーチ タイピング | 自由研究で作ったWebゲーム</title>
-
-  <!-- ★検索結果に表示される説明文 -->
-  <meta name="description" content="小学生の自由研究で作成したカラフルピーチ二次創作のタイピングゲーム。60秒で挑戦！スコア・連続数・ミス数を記録。PCブラウザで無料で遊べます。">
-
-  <!-- ★正規URLを指定 -->
+  <meta name="description" content="小学生の自由研究で作成したカラフルピーチ二次創作のタイピングゲーム。60秒で挑戦！スコア・連続・ミス数を記録。PCブラウザで無料で遊べます。">
   <link rel="canonical" href="https://mad0828crepehana.github.io/typing-game/">
 
-  <!-- ★Open Graph / Twitterカード（SNS共有用） -->
+  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="カラフルピーチ タイピング">
   <meta property="og:description" content="自由研究で作ったカラフルピーチ二次創作タイピングゲーム。60秒チャレンジ！">
@@ -19,28 +19,26 @@
   <meta property="og:image" content="https://mad0828crepehana.github.io/typing-game/assets/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
 
-<!-- 構造化データ（Game）-->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "カラフルピーチ タイピング",
-  "url": "https://mad0828crepehana.github.io/typing-game/",
-  "applicationCategory": "Game",
-  "operatingSystem": "Web",
-  "inLanguage": "ja",
-  "description": "自由研究で作ったカラフルピーチ二次創作のタイピングゲーム。WPMや正解数を計測しながら遊べます。",
-  "genre": ["教育", "タイピング"],
-  "author": { "@type": "Person", "name": "mad0828crepehana" }
-}
-</script>
-
+  <!-- 構造化データ（Game）-->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "カラフルピーチ タイピング",
+    "url": "https://mad0828crepehana.github.io/typing-game/",
+    "applicationCategory": "Game",
+    "operatingSystem": "Web",
+    "inLanguage": "ja",
+    "description": "自由研究で作ったカラフルピーチ二次創作のタイピングゲーム。WPMや正解数を計測しながら遊べます。",
+    "genre": ["教育", "タイピング"],
+    "author": { "@type": "Person", "name": "mad0828crepehana" }
+  }
+  </script>
 
   <link rel="stylesheet" href="style.css">
   <script src="data.js" defer></script>
   <script src="game.js" defer></script>
 </head>
-
 <body>
 
 <!-- START -->
@@ -66,7 +64,6 @@
   <div class="wrap">
     <div class="card card--panel">
       <div class="qrow">
-        <!-- ★ここだけ変更：左カラムに .qtext を付与（固定幅エリア） -->
         <div class="qtext">
           <div id="word"></div>
           <div id="romaji"><span class="done"></span><span class="muted remain"></span></div>
@@ -101,6 +98,57 @@
       <p class="desc">スペースで再開 / Escで終了</p>
       <button class="btn js-start">スタート</button>
     </div>
+  </div>
+</section>
+
+<!-- ===== 説明セクション（READMEを本文化） ===== -->
+<section id="about" class="wrap" style="max-width:860px;margin:40px auto;">
+  <div class="card card--sheet" style="padding:24px">
+    <h2>カラフルピーチ タイピングとは？</h2>
+    <p>推しグループ「カラフルピーチ」のメンバー名やセリフを題材にしたタイピングゲームです。ブラウザ上で動作し、60秒の制限時間でスコアを競えます。</p>
+
+    <h2>特徴 ✨</h2>
+    <ul>
+      <li><strong>日本語＋ローマ字</strong>：キャラ名やセリフが日本語とローマ字で表示されます</li>
+      <li><strong>制限時間カウントダウン</strong>：60秒の持ち時間、残り秒数と横棒バーで残り時間を表示</li>
+      <li><strong>正解・連続・ミス表示</strong>：リアルタイムで更新</li>
+      <li><strong>ローマ字入力ルール</strong>：長音「ー」は <code>-</code>（半角ハイフン）を使って入力（例：ムード → <code>mu-do</code>）</li>
+      <li><strong>結果画面</strong>：正解数、最大連続、ミス数、合計文字数、最終スコアを表示</li>
+    </ul>
+
+    <h2>遊び方 🎮</h2>
+    <ol>
+      <li>スタート画面で <strong>スペースキー</strong> を押すと開始</li>
+      <li>表示されるローマ字を順に入力</li>
+      <li>正解すると次の問題に進む</li>
+      <li>60秒経過または <strong>ESC</strong> キーで終了、リザルト画面が表示</li>
+    </ol>
+
+    <h2>キー操作 ⌨️</h2>
+    <ul>
+      <li><strong>スペース</strong>：ゲーム開始</li>
+      <li><strong>ESC</strong>：強制終了してリザルトへ</li>
+      <li><strong>アルファベットキー / <code>-</code></strong>：タイピング入力（半角英字と半角ハイフンのみ）</li>
+    </ul>
+
+    <h2>開発環境 🛠</h2>
+    <ul>
+      <li>HTML5 / CSS3 / JavaScript (Vanilla)</li>
+      <li>外部ライブラリは未使用</li>
+      <li>PCブラウザ</li>
+    </ul>
+
+    <h2>今後の改善アイデア 💡</h2>
+    <ul>
+      <li>難易度セレクト（制限時間・問題比率を変更）</li>
+      <li>ハイスコア保存（localStorage対応）</li>
+      <li>モバイルUI調整（ソフトキーボード対策）</li>
+      <li>効果音・BGM追加</li>
+    </ul>
+
+    <p style="color:#777;font-size:13px;margin-top:12px">
+      ※本作はファン制作の二次創作であり、公式団体とは関係ありません。
+    </p>
   </div>
 </section>
 
