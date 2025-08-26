@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mad0828crepehana.github.io/typing-game/sitemap.xml
