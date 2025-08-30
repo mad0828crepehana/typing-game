@@ -259,3 +259,25 @@ body{
 
 /* （任意）game画面の余分なスタートボタンを隠す保険 */
 #game .js-start{ display:none !important; }
+
+/* 外側のキャラ画像配置 */
+#start .wrap {
+  position: relative; /* 子要素のabsolute基準にする */
+}
+
+.side-img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  max-height: 85%;   /* カードより少し小さめ */
+  z-index: 1;        /* カードより下にするなら0、上にするなら2 */
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
+}
+
+.side-img-left {
+  left: -120px;  /* カードの外に出す距離は調整 */
+}
+
+.side-img-right {
+  right: -120px;
+}
